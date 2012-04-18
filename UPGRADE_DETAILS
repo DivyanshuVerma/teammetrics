@@ -9,3 +9,5 @@
 > Modified the template for the error reporting (if there is any) and for automatically introducing team names that are available
 
 > Added an 'add' page which adds new teams automatically to all the required places, which are two: the models.py module, and the team_names file both inside the metrics directory. In the models.py file, it creates new class, and defines all the required methods automatically.
+
+>Defined the url structure for 'add a new team' in urls.py. Now just the modification of data is left to be done for adding a new team.

@@ -120,7 +120,7 @@ function remove(id)
 }
 function commit()
 {
-    url = 'http://127.0.0.1/add/tn=' + document.getElementById('team').value + ';val=';
+    url = 'http://127.0.0.1:8000/add/tn=' + document.getElementById('team').value + '&val=';
     i=1;
     while(i!=id_count)
     {
@@ -130,14 +130,16 @@ function commit()
             i++;
             continue;
         }
-        url +=  txt + ',';
+        url +=  txt + '&';
         i++;
     }
-    document.write(url.substring(1));
+    url = url.substring( 0,url.length-1 ) + '/';
+    window.location = url;
 }
 </script>
 
 <div id="main-content">
+    <div><b>Important note:</b> The team name, or the name of the contributor can contain only a-z,A-Z,0-9 or _ <br/>The regex expression used to evaluate the team names is [a-zA-Z0-9_]*?</div><br/>
     <div class="heading">Enter team's' name: &nbsp;&nbsp;<input type="text" id="team"/><br/><br/></div>
     <div class="heading">Enter contributor's name below: <br/><br/></div>
     <div id="fields">

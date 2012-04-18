@@ -10,6 +10,9 @@ def home(request):
 
 def add(request):
     return render_to_response('metrics/template_add.html')
+    
+def addteam(request,team_name,fields):
+    return HttpResponse("Successful" + "<br/>Team Name = " + team_name + "<br/>Fields = " + fields)
 
 def team(request, team_name,ye1=0,ye2=0):
     team_names = get_team_list()
