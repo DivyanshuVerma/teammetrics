@@ -12,7 +12,25 @@ def add(request):
     return render_to_response('metrics/template_add.html')
     
 def addteam(request,team_name,fields):
-    return HttpResponse("Successful" + "<br/>Team Name = " + team_name + "<br/>Fields = " + fields)
+    team_names = get_team_list()
+    if team_name in team_names:
+        return HttpResponse('Team already exists')
+    att = fields.split('&')
+    gtfields = '"' + '","'.join(att) + '"'
+    gtfields = "'" + gtfields + "'"
+    gtlist = '[self.year,self.' + ',self.'.join(att) + ']'
+    att.insert(0,'year')
+    props = '\n\nclass ' + team_name + '(models.Model):\n    '
+    for i in range(len(att)):
+        props += att[i] + ' = models.IntegerField()\n    '
+    props += '\n    def __unicode__(self):\n        return str(self.year)\n\n    def getlist(self):\n        return '+ gtlist + '\n\n    def getfields(self):\n        return '+ gtfields
+    f = open( os.getcwd() + '/metrics/models.py','a')
+    f.write(props)
+    f.close()
+    f = open( os.getcwd() + '/metrics/team_names','a')
+    f.write( '\n' +team_name + '\n')
+    f.close()
+    return HttpResponse('Successfully added' + props.replace('    ','<br/>'))
 
 def team(request, team_name,ye1=0,ye2=0):
     team_names = get_team_list()
@@ -147,6 +165,8 @@ def get_team_list():
     fl = open(os.getcwd() + '/metrics/team_names','r')
     t = ()
     for i in fl:
+        if i == '\n' or i == '':
+            continue
         t += (i[:-1],)
     fl.close()
     return t
