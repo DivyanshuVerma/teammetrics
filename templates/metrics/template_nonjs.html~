@@ -66,6 +66,7 @@ a.hlinks
      <span id="links">&nbsp;&nbsp;&nbsp;
         <a class="hlinks" href="http://wiki.debian.org/FrontPage">FrontPage</a>&nbsp;&nbsp;&nbsp;
         <a class="hlinks" href="http://127.0.0.1:8000">TeamMetrics</a>&nbsp;&nbsp;&nbsp;
+        <a class="hlinks" href="http://127.0.0.1/add/">Add-New-Team</a>&nbsp;&nbsp;&nbsp;
         <a class="hlinks" href="http://wiki.debian.org/HelpContents">HelpContents</a>
      </span>
     </div>
@@ -75,7 +76,6 @@ a.hlinks
 </div>
 <!--*******MAIN CONTENT WILL BE FED AFTER THIS*******-->
 
-{% load metrics_extras %}
 <style type="text/css">
 #main-content
 {
@@ -140,6 +140,7 @@ function go2()
 }
 </script>
 <div id="main-content">
+{% load metrics_extras %}
 {% if flag1 %}
 	<div id="heading">This is the index page for the teammetrics project.</div><br/><br/>
 {% else %}
