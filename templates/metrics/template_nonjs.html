@@ -139,6 +139,7 @@ function go2()
 }
 </script>
 <div id="main-content">
+{% load metrics_extras %}
 {% if flag1 %}
 	<div id="heading">This is the index page for the teammetrics project.</div><br/><br/>
 {% else %}
@@ -155,7 +156,7 @@ function go2()
     Select team:&nbsp;&nbsp;&nbsp;
     <select id="team">
 	{% for i in teams %}
-    	<option value="{{i}}">{{i}}</option>
+    	<option value="{{i}}">{{i|caps}}</option>
 	{% endfor %}
     </select>
     <br/>
