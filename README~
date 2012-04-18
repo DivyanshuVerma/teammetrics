@@ -1,0 +1,16 @@
+Please follow the following steps:
+
+1.) First download and install Django from here: 
+
+https://www.djangoproject.com/download/
+
+2.) Then go to the teammetrics directory and run:
+
+python manage.py syncdb
+python manage.py runserver
+
+3.) Open your browser and go to:
+
+http://127.0.0.1:8000
+
+Written by Divyanshu Verma

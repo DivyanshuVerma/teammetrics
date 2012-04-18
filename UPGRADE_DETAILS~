@@ -1,0 +1,11 @@
+> Used os.getcwd() wherever the path is defined in every file, which removed the need for using a setup file, as it automatically refers to the current directory.
+
+> Used Django's custom templates and filters for rendering data in the template's select fields
+
+> Introduced error correction for selection of years who's data is not available. Now, if a wrong duration is selected, the rendered page tells about the wrong year duration that was selected, and also what selection of the duration has been made for the graph. This was especially required for the Teammetrics_discuss team, who's data is only available for 2011 and 2012.
+
+> Introduced a new file: team_names. It has the names of all the teams that are currently defined in the database. The template page, and the views.py file depend on it. The template renders its first select dialog according to the teams entered in that file. The views.py, gets the teams from that file, and with that, it decides the 'year' duration, which is decided for the correction of wrongly selected year duration.
+
+> Modified the template for the error reporting (if there is any) and for automatically introducing team names that are available
+
+> Added an 'add' page which adds new teams automatically to all the required places, which are two: the models.py module, and the team_names file both inside the metrics directory. In the models.py file, it creates new class, and defines all the required methods automatically.
