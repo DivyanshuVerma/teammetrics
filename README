@@ -18,4 +18,5 @@ http://127.0.0.1:8000
 Written by Divyanshu Verma
 
 Latest Modification:
-Added the 'add team to metrics' function successfully. Just have to decorate it a bit :)
+Added the 'add team to metrics' function.
+Working on admin menu for adding new teams and modifying data in the database.
