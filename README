@@ -6,7 +6,8 @@ https://www.djangoproject.com/download/
 
 2.) Rename the directory to 'teammetrics' if it is anything else.
 
-3.) Then go to the teammetrics directory and run: [You should be in /.../teammetrics$]
+3.) Then go to the teammetrics directory and run:
+[You should be in /.../teammetrics$]
 
 python manage.py syncdb
 python manage.py runserver
