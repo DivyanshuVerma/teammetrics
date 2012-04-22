@@ -33,7 +33,6 @@ def addteam(request,team_name,fields):
     cmd = ['python ' + os.getcwd() + '/manage.py syncdb']
     subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE).wait()
     #return HttpResponse(os.getcwd() + ' Successfully added' + props.replace('\\n','<br/>').replace(' ','&nbsp;'))
-    team_names = get_team_list()    
     return render_to_response('metrics/template_nonjs.html', {'flag1':None, 'data':'The team <b>' + team_name + '</b> was added successfully.', 'teams':team_names})
 
 def team(request, team_name,ye1=0,ye2=0):
