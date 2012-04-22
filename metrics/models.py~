@@ -115,3 +115,20 @@ class teammetrics_discuss(models.Model):
 
     def getfields(self):
         return '"Sukhbir_S","Andreas_T","Alexander_W","Scott_H","Christian_P","Tollef_Fog_H","Cord_B","Martin_Z","Stephen_G","David_B","Ana_G","Charles_P"'
+
+
+class divyanshu(models.Model):
+    class Meta:
+        verbose_name_plural = "divyanshu"
+    year = models.IntegerField()
+    sukhe = models.IntegerField()
+    aseem = models.IntegerField()
+    
+    def __unicode__(self):
+        return str(self.year)
+
+    def getlist(self):
+        return [self.year,self.sukhe,self.aseem]
+
+    def getfields(self):
+        return '"sukhe","aseem"'

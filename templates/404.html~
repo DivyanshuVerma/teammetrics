@@ -66,8 +66,6 @@ a.hlinks
      <span id="links">&nbsp;&nbsp;&nbsp;
         <a class="hlinks" href="http://wiki.debian.org/FrontPage">FrontPage</a>&nbsp;&nbsp;&nbsp;
         <a class="hlinks" href="http://127.0.0.1:8000">TeamMetrics</a>&nbsp;&nbsp;&nbsp;
-        <a class="hlinks" href="http://127.0.0.1:8000/add/">Add-New-Team</a>&nbsp;&nbsp;&nbsp;
-        <a class="hlinks" href="http://127.0.0.1:8000/admin/">Admin</a>&nbsp;&nbsp;&nbsp;
         <a class="hlinks" href="http://wiki.debian.org/HelpContents">HelpContents</a>
      </span>
     </div>
@@ -77,7 +75,7 @@ a.hlinks
 </div>
 <!--*******MAIN CONTENT WILL BE FED AFTER THIS*******-->
 
-<h2>Sorry, looks like the server is overloaded. Please try again in some time</h2><br/>
+<h2>Sorry, the requested page could not be found.</h2><br/>
 To go to the index page, click <a href="http://127.0.0.1:8000">here</a><br/><br/>
 
 <!--*******MAIN CONTENT TILL HERE*******-->

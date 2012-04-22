@@ -67,7 +67,6 @@ a.hlinks
         <a class="hlinks" href="http://wiki.debian.org/FrontPage">FrontPage</a>&nbsp;&nbsp;&nbsp;
         <a class="hlinks" href="http://127.0.0.1:8000">TeamMetrics</a>&nbsp;&nbsp;&nbsp;
         <a class="hlinks" href="http://127.0.0.1:8000/add/">Add-New-Team</a>&nbsp;&nbsp;&nbsp;
-        <a class="hlinks" href="http://127.0.0.1:8000/admin/">Admin</a>&nbsp;&nbsp;&nbsp;
         <a class="hlinks" href="http://wiki.debian.org/HelpContents">HelpContents</a>
      </span>
     </div>
@@ -77,8 +76,78 @@ a.hlinks
 </div>
 <!--*******MAIN CONTENT WILL BE FED AFTER THIS*******-->
 
-<h2>Sorry, looks like the server is overloaded. Please try again in some time</h2><br/>
-To go to the index page, click <a href="http://127.0.0.1:8000">here</a><br/><br/>
+<style type="text/css">
+#main-content
+{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:16px;
+}
+.heading
+{
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight:normal;
+	font-size:18px;
+}
+#error
+{
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight:normal;
+	font-size:14px;
+}
+.hide
+{
+    display:none;
+}
+</style>
+
+<script type="text/javascript">
+id_count = 2;
+function add()
+{   
+    fi = document.getElementById('fields');
+    divtag = document.createElement('div');
+    divtag.setAttribute('id','i'+id_count);
+    divtag.innerHTML = '<input type="text" id="ii'+id_count+'">&nbsp;<button onclick="remove(\'i'+id_count+'\')">x</button>';
+    fi.appendChild(divtag);   
+    id_count++;
+}
+function remove(id)
+{
+    fi = document.getElementById(id);
+    fi.className += ' hide';
+    fi = document.getElementById('i' + id);
+    fi.value = '';
+}
+function commit()
+{
+    url = 'http://127.0.0.1:8000/add/tn=' + document.getElementById('team').value + '&val=';
+    i=1;
+    while(i!=id_count)
+    {
+        txt = document.getElementById('ii' +i).value;
+        if(txt=='')
+        {
+            i++;
+            continue;
+        }
+        url +=  txt + '&';
+        i++;
+    }
+    url = url.substring( 0,url.length-1 ) + '/';
+    window.location = url;
+}
+</script>
+
+<div id="main-content">
+    <div><b>Important note:</b> The team name, or the name of the contributor can contain only a-z,A-Z,0-9 or _ <br/>The regex expression used to evaluate the team names is [a-zA-Z0-9_]*?</div><br/>
+    <div class="heading">Enter team's' name: &nbsp;&nbsp;<input type="text" id="team"/><br/><br/></div>
+    <div class="heading">Enter contributor's name below: <br/><br/></div>
+    <div id="fields">
+        <div id="i1"><input type="text" id="ii1" />&nbsp;<button onclick="remove('i1');">x</button></div>
+    </div>
+    <br/><button id="add" onclick="add();">Add more fields</button>
+    &nbsp;&nbsp;<button id="commit" onclick="commit();">COMMIT</button>
+</div>
 
 <!--*******MAIN CONTENT TILL HERE*******-->
 <div id="footer">

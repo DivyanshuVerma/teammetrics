@@ -12,4 +12,4 @@
 
 >Defined the url structure for 'add a new team' in urls.py.
 
->Addded the admin for adding data to the created new team, also for updating the data on the previous teams.
+>Addded the admin for adding data to the created new team, also for updating the data on the previous teams

@@ -3,7 +3,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls))
     url(r'^$','metrics.views.home'),
     url(r'^add/$', 'metrics.views.add'),
     url(r'^add/tn=(?P<team_name>[a-zA-Z0-9_]*?)&val=(?P<fields>[a-zA-Z0-9_&]*)/$', 'metrics.views.addteam'),

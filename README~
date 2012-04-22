@@ -24,15 +24,5 @@ Latest Modification:
 Added the 'add team to metrics' function.
 Added the admin menu for modifying the data on the new teams, and also for updating the data on the present teams.
 
-===Adding a new Team===
-After starting the server go to add-new-team or alternatively go here: http://127.0.0.1:8000/add/
-Fill the team name and the contributors, add new fields if required, the click on COMMIT.
-
-===Adding data to the new team===
-After starting the server, go to admin or alternatively go here: http://127.0.0.1:8000/admin/
-Enter the details provided above.
-Click on the team you have just added. On the right side there will be a 'Add team_name' button, click on it.
-Add the data to the team.
-
 Written by Divyanshu Verma
 
