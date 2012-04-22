@@ -1,9 +1,8 @@
-
 # Django settings for teammetrics project.
 
 import os
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
