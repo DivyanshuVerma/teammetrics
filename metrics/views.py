@@ -66,11 +66,11 @@ def team(request, team_name,ye1=0,ye2=0):
         data = 'Graph for team: <b>'+team_name.capitalize()+'</b> <br/><img src="res.png" alt="Graph" width="1000px" height="600px"></img>'
         return render_to_response('metrics/template_nonjs.html', {'flag1':None, 'data':data, 'teams':team_names})
     elif ye2==0:
-        if len(a) < 1:
-            return render_to_response('metrics/template_nonjs.html', {'flag1':None, 'data':'Team <b>'+team_name+'</b> exists, but there is no data available.', 'teams':team_names})
         tm = correction( eval(team_name), ye1,ye2)
         ye1,ye2 = tm[0],tm[1]
         a = eval(team_name).objects.filter(year=ye1)
+        if len(a) < 1:
+            return render_to_response('metrics/template_nonjs.html', {'flag1':None, 'data':'Team <b>'+team_name+'</b> exists, but there is no data available.', 'teams':team_names})        
         fields = a[0].getfields()
         f = open(os.getcwd() + '/static/demo.data','w')
         years = ''
